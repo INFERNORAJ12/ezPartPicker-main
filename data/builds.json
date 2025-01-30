@@ -16,6 +16,24 @@
       "name": "High-End Gaming PC",
       "description": "A powerful gaming rig for 4K gaming and heavy workloads.",
       "image": "/images/highend-build.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Budget Gaming PC",
+      "description": "An affordable gaming PC that can run most modern games at 1080p.",
+      "image": "/images/budget-build.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Mid-Range Gaming PC",
+      "description": "A balanced PC build for gaming and content creation at 1440p.",
+      "image": "/images/midrange-build.jpg"
+    },
+    {
+      "id": "6",
+      "name": "High-End Gaming PC",
+      "description": "A powerful gaming rig for 4K gaming and heavy workloads.",
+      "image": "/images/highend-build.jpg"
     }
   ]
   

@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AI-build</title>
     <link rel="stylesheet" href="/css/styles.css"> 
+    <style>
+      input[type="number"]{
+        width: 200px;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    </style>
 </head>
 <body>
     <header>
@@ -23,5 +34,21 @@
             </div>
           </nav>
       </header>
+      <section style="background-color: #f59595;height: 100vh;">
+        <div class="AI-div">
+          <h2>
+            Build An A.I Generated P.C For Your Budget
+          </h2>
+          <button class="btn">₹</button>
+          <button class="btn">€</button>
+          <button class="btn">$</button>
+          <form action="/AI-output" method="get">
+          <br><br>
+          <input type="number" name="amount" value="amount" placeholder="Enter your amount"/>
+          <br><br>
+          <input type="submit" value="submit" class="btn">
+          </form>
+        </div>
+      </section>    
 </body>
 </html>
