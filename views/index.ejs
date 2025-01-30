@@ -10,14 +10,19 @@
 
     <!-- Navigation Bar -->
     <header>
-        <h1>EZPartPicker</h1>
+      <a href="/" style="text-decoration: none;"><h1>EZPartPicker</h1><a>
         <nav>
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
-            <a href="/guide">Guide</a>
-
-            <!-- Show login/sign-in if user is not logged in -->
+            <div class="dropdown"><a>Build</a>
+              <div class="dropdown-content">
+                <a href="/your-build">Your Builds</a>
+                <a href="/AI-build">A.I Generated Rig</a>
+                <a href="/Component">Components</a>
+                <a href="/guide">Guide</a>
+            </div>
+          </div>
             <% if (!user) { %>
                 <a href="/login">Login</a>
                 <a href="/signin">Sign Up</a>

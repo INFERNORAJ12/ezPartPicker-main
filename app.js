@@ -58,6 +58,28 @@ app.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
+app.get('/guide', (req, res) => {
+    res.render('guide');  
+})
+
+app.get('/about', (req, res) => {
+    res.render('about');  
+})
+
+app.get('/contact', (req, res) => {
+  res.render('guide');  
+})
+
+app.get('/your-build', (req, res) => {
+  res.render('your-build');  
+})
+app.get('/AI-build', (req, res) => {
+  res.render('AI-build');  
+})
+app.get('/Component', (req, res) => {
+  res.render('Component');  
+})
+
 // Start Server
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Pass`));
