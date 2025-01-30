@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZPartPicker - Recommended Builds</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>EZPartPicker</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/guide">Guide</a>
+
+            <!-- Show login/sign-in if user is not logged in -->
+            <% if (!user) { %>
+                <a href="/login">Login</a>
+                <a href="/signin">Sign Up</a>
+            <% } else { %>
+                <a href="/logout">Logout (<%= JSON.parse(user).name %>)</a>
+            <% } %>
+        </nav>
+    </header>
+
+    <!-- Recommended PC Builds Section -->
+    <section>
+        <h2>Recommended PC Builds</h2>
+        <div class="builds-grid">
+            <% recommendedBuilds.slice(0,6).forEach(build => { %>
+                <div class="build-card">
+                    <img src="<%= build.image %>" alt="<%= build.name %>">
+                    <h3><%= build.name %></h3>
+                    <p><strong>CPU:</strong> <%= build.cpu %></p>
+                    <p><strong>GPU:</strong> <%= build.gpu %></p>
+                    <a href="/build/<%= build.id %>" class="btn">View Details</a>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+
+</body>
+</html>

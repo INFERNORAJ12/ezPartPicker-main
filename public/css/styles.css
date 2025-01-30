@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Navigation */
+header {
+  background-color: #fff;
+  padding: 15px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #e60012;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #e60012;
+}
+
+/* Recommended PC Builds Section */
+section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Builds Grid */
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3x2 layout */
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Individual Build Card */
+.build-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.build-card:hover {
+  transform: scale(1.05);
+}
+
+.build-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.build-card h3 {
+  margin: 10px 0;
+  color: #e60012;
+  font-size: 20px;
+}
+
+.build-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #e60012;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #cc000f;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .builds-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .builds-grid {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  header {
+      flex-direction: column;
+      text-align: center;
+  }
+}
