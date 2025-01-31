@@ -67,7 +67,7 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/contact', (req, res) => {
-  res.render('guide');  
+  res.render('contact');  
 })
 
 app.get('/your-build', (req, res) => {
@@ -79,7 +79,22 @@ app.get('/AI-build', (req, res) => {
 app.get('/Component', (req, res) => {
   res.render('Component');  
 })
+app.get('/submit-contact', (req, res) => {
+    res.render('submit-contact');
+});
+app.get('/Ai-api', async (req, res) => {
+    const amount = req.query.amt;
+    if (!amount) {
+        return res.status(400).json({ result: 'Amount is required' });
+    }
 
-// Start Server
+    try {
+        const apiResult = await AiApi.processAmount(amount);
+        res.json({ result: apiResult });
+    } catch (error) {
+        res.status(500).json({ result: 'Error processing the request' });
+    }
+});
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Pass`));

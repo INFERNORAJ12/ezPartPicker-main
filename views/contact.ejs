@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contact</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <style>
+      textarea{
+      width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    resize: none;
+      }
+    </style>
 </head>
 <body>
-    <header>
-        <a href="/" style="text-decoration: none;"><h1>EZPartPicker</h1><a>
-          <nav>
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/contact">Contact</a>
-              <div class="dropdown"><a>Build</a>
-                <div class="dropdown-content">
-                  <a href="/your-build">Your Builds</a>
-                  <a href="/AI-build">A.I Generated Rig</a>
-                  <a href="/Component">Components</a>
-                  <a href="/guide">Guide</a>
-              </div>
-            </div>
-          </nav>
-      </header>
+      <section>
+        <div class="auth-container">
+          <h2>Contact Us</h2>
+          <form action="/submit-contact" method="POST">
+              <input type="email" name="email" placeholder="Email" required>
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="text" name="subject" placeholder="Subject" required>
+              <textarea placeholder="Enter your problem in detail"></textarea>
+              <button type="submit">Login</button>
+          </form>
+          <br>
+          <p>Go to <a href="/">home</a></p>
+      </div>
+      </section>
 </body>
 </html>

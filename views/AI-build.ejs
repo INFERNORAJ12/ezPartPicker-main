@@ -4,51 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-build</title>
-    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/styles.css">
     <style>
-      input[type="number"]{
-        width: 200px;
-        padding: 10px;
-        margin: 5px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="/" style="text-decoration: none;"><h1>EZPartPicker</h1><a>
-          <nav>
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/contact">Contact</a>
-              <div class="dropdown"><a>Build</a>
+        <a href="/" style="text-decoration: none;">
+            <h1>EZPartPicker</h1>
+        </a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <div class="dropdown">
+                <a href="#">Build</a>
                 <div class="dropdown-content">
-                  <a href="/your-build">Your Builds</a>
-                  <a href="/AI-build">A.I Generated Rig</a>
-                  <a href="/Component">Components</a>
-                  <a href="/guide">Guide</a>
-              </div>
+                    <a href="/your-build">Your Builds</a>
+                    <a href="/AI-build">A.I Generated Rig</a>
+                    <a href="/Component">Components</a>
+                    <a href="/guide">Guide</a>
+                </div>
             </div>
-          </nav>
-      </header>
-      <section style="background-color: #f59595;height: 100vh;">
-        <div class="AI-div">
-          <h2>
-            Build An A.I Generated P.C For Your Budget
-          </h2>
-          <button class="btn">₹</button>
-          <button class="btn">€</button>
-          <button class="btn">$</button>
-          <form action="/AI-output" method="get">
-          <br><br>
-          <input type="number" name="amount" value="amount" placeholder="Enter your amount"/>
-          <br><br>
-          <input type="submit" value="submit" class="btn">
-          </form>
-        </div>
-      </section>    
+        </nav>
+    </header>
 </body>
 </html>
