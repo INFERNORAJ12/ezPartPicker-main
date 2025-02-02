@@ -40,5 +40,20 @@
             </div>
         </nav>
     </header>
+    <section>
+        <form action="/AI-build" method="get">
+            <h2>A.I Generated Rig</h2>
+            <label for="num_parts">Number of Parts:</label>
+            <input type="number" id="amount" name="amount" required>
+            <input type="submit" value="submit" id="sumbit">
+        </form>
+    </section>
+    <p>
+        <% try { %>
+            <%= bhag %>
+        <% } catch (error) { %>
+            <%= "An error occurred: " + error.message %>
+        <% } %>
+    </p>
 </body>
 </html>
