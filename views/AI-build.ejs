@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-build</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         input[type="number"] {
             width: 200px;
@@ -17,6 +17,87 @@
         }
         h2 {
             text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .nishantkiden{
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: rgb(255, 0, 0);
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            &:focus {
+                outline: none;
+            }
+            &:active {
+                background-color: #ccc;
+            }
+            &:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+            &:required {
+                border-color: red;
+            }
+            &:invalid {
+                border-color: red;
+            }
+            &:in-range {
+                border-color: green;
+            }
+            &:out-of-range {
+                border-color: red;
+            }
+            &:valid {
+                border-color: green;
+            }
+            &:read-only {
+                background-color: #eee;
+                cursor: not-allowed;
+            }
+            &:checked {
+                background-color: green;
+            }
+            &:disabled:checked {
+                background-color: #ccc;
+            }
+            &:checked:disabled {
+                background-color: #ccc;
+            }
+            &:indeterminate {
+                background-color: yellow;
+            }
+            &:invalid:focus {
+                border-color: red;
+                box-shadow: 0 0 5px red;
+            }
+            &:valid:focus {
+                border-color: green;
+                box-shadow: 0 0 5px green;
+            }
+            &:out-of-range:focus {
+                border-color: red;
+                box-shadow: 0 0 5px red;
+            }
+            &:read-only:focus {
+                border-color: #eee;
+                box-shadow: 0 0 5px #eee;
+            }
+            &:checked:focus {
+                background-color: green;
+                box-shadow: 0 0 5px green;
+            }
         }
     </style>
 </head>
@@ -43,17 +124,21 @@
     <section>
         <form action="/AI-build" method="get">
             <h2>A.I Generated Rig</h2>
-            <label for="num_parts">Number of Parts:</label>
-            <input type="number" id="amount" name="amount" required>
-            <input type="submit" value="submit" id="sumbit">
+            <label for="num_parts">Number of Parts:</label><br>
+            <input type="number" id="amount" name="amount" required><BR>
+            <input type="submit" value="submit" id="sumbit" class="btn">
         </form>
     </section>
-    <p>
-        <% try { %>
-            <%= bhag %>
-        <% } catch (error) { %>
-            <%= "An error occurred: " + error.message %>
+    <div class="nishantkiden">
+        <% if (pcParts && Array.isArray(pcParts)) { %>
+            <ul>
+                <% pcParts.forEach(part => { %>
+                    <li><strong><%= part.part %><br></strong> <%= part.name %>: $<%= part.price %></li><br>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No PC parts available or invalid data.</p>
         <% } %>
-    </p>
+    </div>
 </body>
 </html>
