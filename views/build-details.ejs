@@ -21,6 +21,12 @@
                   <a href="/guide">Guide</a>
               </div>
             </div>
+            <% if (!user) { %>
+              <a href="/login">Login</a>
+              <a href="/signin">Sign Up</a>
+          <% } else { %>
+              <a href="/logout">Logout (<%= JSON.parse(user).name %>)</a>
+          <% } %>
           </nav>
       </header>
 

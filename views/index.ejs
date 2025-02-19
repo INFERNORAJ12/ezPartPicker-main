@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EZPartPicker - Recommended Builds</title>
+    <title>EZPartPicker</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -33,34 +33,32 @@
     </header>
 
     <!-- Recommended PC Builds Section -->
-    <section >
-        <h2>Recommended PC Builds</h2>
-        <div class="builds-grid">
-            <% recommendedBuilds.slice(0,6).forEach(build => { %>
-                <div class="build-card">
-                    <img src="<%= build.image %>" alt="<%= build.name %>">
-                    <h3><%= build.name %></h3>
-                    <p><strong>CPU:</strong> <%= build.cpu %></p>
-                    <p><strong>GPU:</strong> <%= build.gpu %></p>
-                    <a href="/build/<%= build.id %>" class="btn">View Details</a>
-                </div>
-            <% }); %>
+    <div class="hero">
+        <h2>Build Your Perfect PC</h2>
+        <p>Choose the best components and ensure compatibility with ease.</p>
+    </div>
+    
+    <div class="content">
+        <div class="card">
+            <img src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2022/09/newsroom-innovation-13th-gen-intel-core-1-feat.jpg.rendition.intel_.web_.1648.927.jpg" alt="CPU">
+            <h3>Processors</h3>
+            <p>Find the latest and most powerful CPUs for your build.</p>
+            <a href="/Component">Browse CPUs</a>
         </div>
-        <br>
-        <H2>
-                Build Your Own PC
-        </H2>
-        <div class="Build-own">
-            <div class="Build-own-subdiv">
-                <a href="/AI-build">BUILD WITH A.I</a>
-            </div>
-            <div class="Build-own-subdiv">
-                <a href="/your-build"> BUILD YOURSELF</a>
-            </div>
-            <div class="Build-own-subdiv">
-                <a href="/Component">SEARCH BY COMPONENTS</a>
-            </div>
+        <div class="card">
+            <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/graphics-cards/geforce-ada-4090-web-og-1200x630@2x.jpg" alt="GPU">
+            <h3>Graphics Cards</h3>
+            <p>Discover GPUs for gaming, editing, and more.</p>
+            <a href="/Component">Browse GPUs</a>
         </div>
+        <div class="card">
+            <img src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/a-budget-motherboard.png" alt="Motherboard">
+            <h3>Motherboards</h3>
+            <p>Choose the perfect motherboard for your CPU and needs.</p>
+            <a href="/Component">Browse Motherboards</a>
+        </div>
+    </div>
+    
     </section>
 </body>
 </html>

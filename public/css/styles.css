@@ -1,132 +1,54 @@
-/* General Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f8f8f8;
-  color: #222;
-  margin: 0;
-  padding: 0;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* Header Navigation */
+body {
+    line-height: 1.6;
+    background-color: #c6e9f9; /* Light neutral background */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header */
 header {
-  background-color: #fff;
-  padding: 15px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.567);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+    background-color: #3d43f7; /* Dark background */
+    color: #fff; /* White text for contrast */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0; /* Subtle light border */
 }
 
 header h1 {
-  font-size: 24px;
-  color: #e60012;
-  font-weight: bold;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ff9800; /* Accent orange color */
 }
 
-nav {
-  display: flex;
-  gap: 20px;
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  transition: color 0.3s ease-in-out;
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-nav a:hover {
-  color: #e60012;
+header nav a:hover {
+    color: #ff9800; /* Hover effect in accent color */
+    transform: scale(1.1);
 }
 
-/* Recommended PC Builds Section */
-section {
-  text-align: center;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-/* Builds Grid */
-.builds-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3x2 layout */
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* Individual Build Card */
-.build-card {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  text-align: center;
-}
-
-.build-card:hover {
-  transform: scale(1.05);
-}
-
-.build-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.build-card h3 {
-  margin: 10px 0;
-  color: #e60012;
-  font-size: 20px;
-}
-
-.build-card p {
-  font-size: 14px;
-  color: #555;
-  margin: 5px 0;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  background: #e60012;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #cc000f;
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-  .builds-grid {
-      grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .builds-grid {
-      grid-template-columns: repeat(1, 1fr);
-  }
-
-  header {
-      flex-direction: column;
-      text-align: center;
-  }
-}
-/* Style for dropdown button */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -135,55 +57,162 @@ h2 {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: white;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
     z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 0.75rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #ff9800; /* Accent color */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #2196f3; /* Primary blue, more subtle */
+    color: white;
+    border-bottom: 2px solid #e0e0e0; /* Slightly darker blue for a cleaner look */
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+/* Content Section */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 5px solid #2196f3; /* Blue separator, lighter shade */
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem;
+    color: #2196f3; /* Lighter blue for headings */
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1rem;
+    padding: 0 1rem;
+    color: #555; /* Neutral gray for text */
+    line-height: 1.5;
+}
+
+.card a {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.6rem 1.5rem;
+    background-color: #2196f3; /* Primary blue button */
+    color: white;
     text-decoration: none;
-    display: block;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-.Build-own{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3x2 layout */
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-.Build-own-subdiv{
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  text-align: center;
+.card a:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+    transform: scale(1.05);
 }
 
-.Build-own-subdiv:hover {
-  transform: scale(1.05);
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
 }
-.AI-div{
-  background-color: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.849);
-  text-align: center;
-  width:90vw;
-  height: 70vh;
-  animation: fadeIn 0.5s ease-in-out;
+
+/* Section Styling */
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-a{
-  text-decoration: none;
+
+/* Headings */
+section h2 {
+    color: #2196f3; /* Primary blue */
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
 }
+
+/* Paragraph Styling */
+section p {
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Numbered Lists in Paragraphs */
+section p:nth-of-type(3),
+section p:nth-of-type(4) {
+    list-style: none;
+    padding-left: 1.2rem;
+}
+
+section p:nth-of-type(3)::before,
+section p:nth-of-type(4)::before {
+    content: counter(section-item, decimal) '. ';
+    counter-increment: section-item;
+    color: #2196f3; /* Lighter blue */
+    font-weight: bold;
+}
+
+
+
+
+
+

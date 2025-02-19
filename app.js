@@ -34,57 +34,60 @@ app.get('/build/:id', (req, res) => {
 
 // Login Page
 app.get('/login', (req, res) => {
-    if (req.cookies.user) {
-        return res.redirect('/');
-    }
-    res.render('login');
+  if (req.cookies.user) {
+      return res.redirect('/');
+  }
+  res.render('login');
 });
 
 // Sign-up Page
 app.get('/signin', (req, res) => {
-    if (req.cookies.user) {
-        return res.redirect('/');
-    }
-    res.render('signin');
+  if (req.cookies.user) {
+      return res.redirect('/');
+  }
+  res.render('signin');
 });
 
 // Simulated Login (For Now)
-app.post('/login', (req, res) => {
-    res.cookie('user', JSON.stringify({ name: "Gamer" }), { maxAge: 3600000 });
-    res.redirect('/');
+app.post('/signin', (req, res) => {
+  const { name,email, password } = req.body;
+  res.cookie('user', JSON.stringify({ name: name, email:email,password:password}), { maxAge: 3600000 });
+  res.redirect('/');
 });
 
 // Simulated Logout
 app.get('/logout', (req, res) => {
-    res.clearCookie('user');
-    res.redirect('/');
+  res.clearCookie('user');
+  res.redirect('/');
 });
 
 app.get('/guide', (req, res) => {
-    res.render('guide');  
+  res.render('guide', { user: req.cookies.user || null }); 
 })
 
 app.get('/about', (req, res) => {
-    res.render('about');  
+  res.render('about', { user: req.cookies.user || null }); 
 })
 
 app.get('/contact', (req, res) => {
-  res.render('contact');  
+  res.render('contact', { user: req.cookies.user || null }); 
 })
 
 app.get('/your-build', (req, res) => {
-  res.render('your-build');  
+  res.render('your-build', { user: req.cookies.user || null });
 })
 app.get('/AI-build', async (req, res) => {
   const amount = req.query.amount;
 
-  const {
-    GoogleGenerativeAI,
-    HarmCategory,
-    HarmBlockThreshold,
-  } = require("@google/generative-ai");
+  if (!amount) {
+    // If no amount is provided, render the page with a default message and no PC parts
+    return res.render('AI-build', { pcParts: null, message: 'Please enter a budget to generate the PC build.',user: req.cookies.user || null });
+  }
+
+  const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require("@google/generative-ai");
   const apiKey = process.env.KEY;
-const genAI = new GoogleGenerativeAI(apiKey);
+  const genAI = new GoogleGenerativeAI(apiKey);
+
   try {
     const model = genAI.getGenerativeModel({
       model: "gemini-2.0-flash-exp",
@@ -110,17 +113,19 @@ const genAI = new GoogleGenerativeAI(apiKey);
     });
 
     const result = await chatSession.sendMessage(`${amount} USD`);
-    const responseText = result.response.text()
-    console.log(responseText);
+    const responseText = result.response.text();
     const pcParts = JSON.parse(responseText);
-    res.render('AI-build', { pcParts: pcParts });
+    
+    res.render('AI-build', { pcParts: pcParts, message: `Generated PC build for $${amount}`,user: req.cookies.user || null });
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
 app.get('/Component', (req, res) => {
-  res.render('Component');  
+  res.render('Component', { user: req.cookies.user || null });  
 })
 app.get('/submit-contact', (req, res) => {
     res.render('submit-contact');

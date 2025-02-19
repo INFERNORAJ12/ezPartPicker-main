@@ -4,128 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-build</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        input[type="number"] {
-            width: 200px;
-            padding: 10px;
-            margin: 5px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        h2 {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        .nishantkiden{
-            margin-bottom: 20px;
-            font-size: 20px;
-            color: rgb(255, 0, 0);
-            border: 2px solid black;
-            border-radius: 5px;
-            padding: 10px;
-            font-weight: bold;
-            text-align: center;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-            &:hover {
-                background-color: #ddd;
-                color: black;
-            }
-            &:focus {
-                outline: none;
-            }
-            &:active {
-                background-color: #ccc;
-            }
-            &:disabled {
-                background-color: #ccc;
-                cursor: not-allowed;
-            }
-            &:required {
-                border-color: red;
-            }
-            &:invalid {
-                border-color: red;
-            }
-            &:in-range {
-                border-color: green;
-            }
-            &:out-of-range {
-                border-color: red;
-            }
-            &:valid {
-                border-color: green;
-            }
-            &:read-only {
-                background-color: #eee;
-                cursor: not-allowed;
-            }
-            &:checked {
-                background-color: green;
-            }
-            &:disabled:checked {
-                background-color: #ccc;
-            }
-            &:checked:disabled {
-                background-color: #ccc;
-            }
-            &:indeterminate {
-                background-color: yellow;
-            }
-            &:invalid:focus {
-                border-color: red;
-                box-shadow: 0 0 5px red;
-            }
-            &:valid:focus {
-                border-color: green;
-                box-shadow: 0 0 5px green;
-            }
-            &:out-of-range:focus {
-                border-color: red;
-                box-shadow: 0 0 5px red;
-            }
-            &:read-only:focus {
-                border-color: #eee;
-                box-shadow: 0 0 5px #eee;
-            }
-            &:checked:focus {
-                background-color: green;
-                box-shadow: 0 0 5px green;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/AI-build.css">    
 </head>
 <body>
     <header>
-        <a href="/" style="text-decoration: none;">
-            <h1>EZPartPicker</h1>
-        </a>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-            <div class="dropdown">
-                <a href="#">Build</a>
+        <a href="/" style="text-decoration: none;"><h1>EZPartPicker</h1><a>
+          <nav>
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
+              <div class="dropdown"><a>Build</a>
                 <div class="dropdown-content">
-                    <a href="/your-build">Your Builds</a>
-                    <a href="/AI-build">A.I Generated Rig</a>
-                    <a href="/Component">Components</a>
-                    <a href="/guide">Guide</a>
-                </div>
+                  <a href="/your-build">Your Builds</a>
+                  <a href="/AI-build">A.I Generated Rig</a>
+                  <a href="/Component">Components</a>
+                  <a href="/guide">Guide</a>
+              </div>
             </div>
-        </nav>
-    </header>
+              <% if (!user) { %>
+                  <a href="/login">Login</a>
+                  <a href="/signin">Sign Up</a>
+              <% } else { %>
+                  <a href="/logout">Logout (<%= JSON.parse(user).name %>)</a>
+              <% } %>
+          </nav>
+      </header>
     <section>
         <form action="/AI-build" method="get">
             <h2>A.I Generated Rig</h2>
-            <label for="num_parts">Number of Parts:</label><br>
-            <input type="number" id="amount" name="amount" required><BR>
+            
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" required><BR>
             <input type="submit" value="submit" id="sumbit" class="btn">
         </form>
     </section>

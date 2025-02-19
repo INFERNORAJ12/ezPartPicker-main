@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #c6e9f9; /* Light neutral background */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header */
+header {
+    background-color: #3d43f7; /* Dark background */
+    color: #fff; /* White text for contrast */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0; /* Subtle light border */
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ff9800; /* Accent orange color */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ff9800; /* Hover effect in accent color */
+    transform: scale(1.1);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 0.75rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #ff9800; /* Accent color */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Form Section */
+section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #2196f3; /* Primary blue */
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #2196f3; /* Focus color */
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #3d43f7; /* Dark background */
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2196f3; /* Lighter blue on hover */
+    transform: scale(1.05);
+}
+
+/* PC Parts List */
+.nishantkiden {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nishantkiden ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nishantkiden li {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.nishantkiden strong {
+    color: #2196f3; /* Highlight part name in blue */
+}
+
+.nishantkiden p {
+    text-align: center;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    section {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
