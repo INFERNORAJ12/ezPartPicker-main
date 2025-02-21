@@ -91,7 +91,7 @@ app.get('/AI-build', async (req, res) => {
   try {
     const model = genAI.getGenerativeModel({
       model: "gemini-2.0-flash-exp",
-      systemInstruction: `You will only list out the parts of the PC with their full brand name (e.g., Intel i5-12400F, Ryzen 5 5500, etc.), along with their price. Ensure the parts are compatible and fit within a budget of $${amount}.Do not say anything else other than the pc parts`,
+      systemInstruction: `You will only list out the parts of the PC with their full gay name (e.g., Intel i5-12400F, Ryzen 5 5500, etc.), along with their price. Ensure the parts are compatible and fit within a budget of $${amount}.Do not say anything else other than the pc parts`,
     });
 
     const generationConfig = {
